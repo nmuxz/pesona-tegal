@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Tegal - Login dan Registrasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Form Registrasi -->
+        <div id="registerForm" class="form-container">
+            <div class="left-side">
+                <img src="time_to_travel1.png" alt="Travel Image" class="travel-img">
+            </div>
+            <div class="right-side">
+                <h2>Registrasi</h2>
+                <p>Silahkan buat akun dengan mengisi data diri anda</p>
+                <input type="text" id="registerNama" placeholder="Nama" />
+                <input type="text" id="registerAsal" placeholder="Asal" />
+                <input type="email" id="registerEmail" placeholder="Email" />
+                <input type="password" id="registerPassword" placeholder="Password" />
+                <input type="password" id="registerConfirmPassword" placeholder="Konfirmasi Password" />
+                <button onclick="register()">Masuk</button>
+                <p>Sudah punya akun? <a href="#" onclick="showLogin()">Masuk</a></p>
+            </div>
+        </div>
+
+        <!-- Form Login -->
+        <div id="loginForm" class="form-container" style="display: none;">
+            <div class="left-side">
+                <img src="time_to_travel2.png" alt="Travel Image" class="travel-img">
+            </div>
+            <div class="right-side">
+                <h2>Selamat Datang!</h2>
+                <p>Silahkan login terlebih dahulu</p>
+                <input type="email" id="loginEmail" placeholder="Email" />
+                <input type="password" id="loginPassword" placeholder="Password" />
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe" />
+                    <label for="rememberMe">Ingat saya</label>
+                </div>
+                <button onclick="login()">Masuk</button>
+                <p>Belum punya akun? <a href="#" onclick="showRegister()">Buat Akun</a></p>
+                <p><a href="#">Lupa Password</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
