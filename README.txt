@@ -10,3 +10,6 @@
     b. Bahasa Pemrograman : JavaScript, html, css
     c. Database : SQL
     d. Desain : Figma  
+
+Cara Menjalankan Web pesona Tegal di Locak Host
+1. Download file Pesona Tegal
