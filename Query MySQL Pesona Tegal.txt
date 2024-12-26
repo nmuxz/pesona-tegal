@@ -1,0 +1,96 @@
+CREATE DATABASE pesona_tegal;
+
+USE pesona_tegal;
+
+DROP DATABASE pesona_tegal;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    origin VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabel Admin
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+--Tabel Wisata
+CREATE TABLE wisata (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    subkategori ENUM('Wisata Alam', 'Wisata Sejarah', 'Wisata Taman') NOT NULL,
+    nama_wisata VARCHAR(255) NOT NULL,
+    latitude FLOAT,
+    longitude FLOAT,
+    foto_utama VARCHAR(255) NOT NULL,
+    deskripsi TEXT
+);
+
+--Tabel Kuliner
+CREATE TABLE kuliner (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    subkategori ENUM('Cafe', 'Rumah Makan') NOT NULL,
+    nama_kuliner VARCHAR(255) NOT NULL,
+    latitude FLOAT,
+    longitude FLOAT,
+    foto_utama VARCHAR(255) NOT NULL,
+    deskripsi TEXT
+);
+
+--Tabel Oleh-oleh
+CREATE TABLE oleh_oleh (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    subkategori ENUM('Barang', 'Makanan') NOT NULL,
+    nama_oleh_oleh VARCHAR(255) NOT NULL,
+    latitude FLOAT,
+    longitude FLOAT,
+    foto_utama VARCHAR(255) NOT NULL,
+    deskripsi TEXT
+);
+
+--Tabel Galeri
+CREATE TABLE galeri (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_kategori INT NOT NULL,
+    kategori ENUM('wisata', 'kuliner', 'oleh_oleh') NOT NULL,
+    foto VARCHAR(255) NOT NULL,
+    status ENUM('aktif', 'nonaktif') DEFAULT 'aktif',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+--Tabel Rating
+CREATE TABLE rating (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_item INT NOT NULL,  -- ID universal untuk item (wisata, kuliner, atau oleh-oleh)
+    kategori ENUM('wisata', 'kuliner', 'oleh_oleh') NOT NULL, -- Kategori menentukan jenis item
+    id_user INT NULL,  -- ID pengguna yang memberi rating
+    rating FLOAT CHECK (rating BETWEEN 1 AND 5), -- Rating dengan nilai valid 1-5
+    komentar TEXT, -- Komentar pengguna
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE
+);
+
+---<  DAta Percobaan Awal jangan upload  >---
+-- Admin
+INSERT INTO admin (username, password) VALUES ('admin', 'password123');
+
+SELECT *FROM kuliner;
+SELECT *FROM wisata;
+SELECT *FROM oleh_oleh;
+SELECT *FROM rating;
+SELECT*FROM users;
+SELECT*FROM galeri;
+
+DROP Table rating;
+DROP Table galeri;
+DROP Table oleh_oleh;
+DROP Table kuliner;
+DROP Table wisata;
+DROP Table admin;
+DROP Table users;
