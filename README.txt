@@ -13,3 +13,7 @@
 
 Cara Menjalankan Web pesona Tegal di Locak Host
 1. Download file Pesona Tegal
+2. Ekstrak dan copy file tersebut pada file instalan xampp seperti berikut (\xampp\htdocs\Pesona tegal)
+3. kemudian Copy Query nya pada file Query MySQL untuk membuat data basenya.
+4. masuk ke admin untuk mengelola data konten dengan membuka browser kemudia masukkan http://localhost/pesona_tegal/admin_dashboar.php
+5. untuk masuk ke web pesona tegal masukkan http://localhost/pesona_tegal/beranda.php.
