@@ -1,4 +1,3 @@
-<!-- // config.php -->
 <?php
 $host = "localhost"; // Nama host (biasanya localhost untuk pengembangan lokal)
 $username = "root";  // Username MySQL

@@ -1,0 +1,953 @@
+/* RESET CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff; /* Warna putih sebagai background utama */
+    color: #333;
+}
+
+/* HEADER NAVIGATION */
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+    position: relative;
+}
+
+.logo {
+    height: 70px;
+}
+
+.navbar .logo img {
+    width: 70px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    position: relative;
+    margin-right: 30px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+/* Dropdown Menu */
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+    list-style: none;
+    width: 180px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+}
+
+.dropdown-menu li a {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Tombol Keluar */
+.auth-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.auth-buttons .btn {
+    background-color: #052a5d;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #08468b;
+    transform: scale(1.05);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Tambah transisi untuk animasi */
+}
+
+/* Hamburger animasi saat menu terbuka */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    /* Rotasi bagian pertama */
+    position: relative;
+    top: 8px;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    /* Menghilangkan bagian tengah */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    /* Rotasi bagian ketiga */
+    position: relative;
+    bottom: 8px;
+}
+
+/* Menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    /* Lebar menu */
+    background: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    /* Awalnya tersembunyi di luar layar */
+    transition: transform 0.3s ease-in-out;
+    /* Efek transisi saat muncul */
+    z-index: 1000;
+}
+
+/* Menu aktif (muncul ke layar) */
+.menu.active {
+    transform: translateX(0);
+    /* Geser masuk ke posisi semula */
+}
+
+/* Logo */
+.logo1 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    height: 70px;
+}
+
+/* Kategori */
+.categories {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.categories a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 30px;
+    color: #000000;
+    transition: color 0.3s ease;
+    /* Tambah transisi pada warna */
+}
+
+.categories a:hover {
+    color: #0056b3;
+    /* Ubah warna saat hover */
+}
+
+.category {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.category span {
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    /* Efek transisi pada background */
+}
+
+/* Tambahkan aturan untuk kategori tanpa subkategori */
+.category > a {
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    font-family: 'Times New Roman', serif;
+    text-decoration: none;
+    font-size: 20px;
+    color: #211f1f;
+}
+
+/* Hover pada kategori tanpa subkategori */
+.category > a:hover {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    color: #0056b3;
+}
+
+/* Hover pada kategori */
+.category:hover span {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Subkategori */
+.subcategories {
+    list-style: none;
+    margin: 0;
+    padding: 5px 10px;
+    display: none; /* Default subkategori tersembunyi */
+    background-color: #f9f9f9; /* Warna latar belakang subkategori */
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Tambah efek transisi pada subkategori */
+}
+
+/* Subkategori link */
+.subcategories li a {
+    text-align: left;
+    margin: 5px 0;
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Hover pada subkategori */
+.subcategories li a:hover {
+    color: #08468b;
+    padding-left: 10px;
+    /* Memberikan efek padding saat hover */
+}
+
+/* Kategori dengan subkategori yang aktif */
+.category.open .subcategories {
+    display: block;
+    /* Tampilkan subkategori saat kategori aktif */
+}
+
+/* Menu Overlay - Tambahkan overlay saat menu terbuka untuk meningkatkan interaktivitas */
+.menu.active+.overlay {
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Warna transparan untuk overlay */
+    z-index: 900;
+    transition: all 0.3s ease;
+}
+
+/* Menambahkan animasi pada overlay */
+.overlay.active {
+    display: block;
+}
+
+/* Hero section */
+.hero {
+    background-image: url('asset/rumah-makan.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Styling untuk container kartu */
+.wisata-list {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: flex-start; /* Mengatur agar gambar berada di sebelah kiri */
+    gap: 20px; /* Menambahkan jarak antar gambar */
+    padding: 20px;
+    background-color: #f4f4f4;
+    flex-wrap: wrap; /* Membuat gambar membungkus ke baris baru jika layar sempit */
+    max-width: 1200px; /* Membatasi lebar maksimum dari kontainer */
+    margin: 0 auto;
+}
+
+.wisata-list .card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 23%; /* Lebar gambar untuk 4 gambar per baris */
+    max-width: 100%; /* Membatasi lebar maksimum kartu */
+    margin-bottom: 20px;
+    flex: 1 1 23%; /* Menyesuaikan dengan lebar container */
+}
+
+.wisata-list .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.wisata-list .card-body {
+    padding: 20px;
+}
+
+.wisata-list .card-body h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.wisata-list .card-body p {
+    font-size: 1rem;
+    color: black; /* Warna hitam untuk teks deskripsi */
+    overflow: hidden; /* Menyembunyikan teks yang melebihi batas */
+    text-overflow: ellipsis; /* Memberikan tanda ... jika teks terlalu panjang */
+    display: -webkit-box;
+  
+    -webkit-box-orient: vertical;
+}
+
+.wisata-list .btn {
+    display: block;
+    width: fit-content;
+    margin: 10px auto 0; /* Memastikan tombol berada di tengah bawah */
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.wisata-list .btn:hover {
+    background-color: #2980b9;
+}
+
+.rating {
+    display: flex;
+    justify-content: center; /* Menyelaraskan bintang di tengah secara horizontal */
+    align-items: center;
+    font-size: 1.2rem;
+    color: #FFD700; /* Warna bintang */
+    margin-bottom: 0.5rem;
+}
+
+.rating .star {
+    margin-right: 0.1rem;
+}
+
+.rating .star.filled {
+    color: #f4c150; /* Bintang penuh */
+}
+
+.rating .star.half {
+    color: #f4c150; /* Bintang setengah */
+    position: relative;
+}
+
+.rating .star.half::after {
+    content: '\\2605'; /* Simbol bintang kosong */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #fff; /* Warna untuk bagian kosong */
+}
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #f4c150; /* Warna bintang */
+    margin-bottom: 0.5rem;
+}
+
+.rating .star {
+    margin-right: 0.1rem;
+}
+
+.rating .star.filled {
+    color: #f4c150; /* Bintang penuh */
+}
+
+.rating .star.half {
+    color: #f4c150; /* Bintang setengah */
+    position: relative;
+}
+
+.rating .star.half::after {
+    content: '\\2605'; /* Simbol bintang kosong */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #fff; /* Warna untuk bagian kosong */
+}
+
+/* FOOTER */
+
+/* Gaya umum untuk bagian footer */
+.main-footer {
+    background-color: #08468b; /* Warna latar belakang footer */
+    color: white; /* Warna teks di footer */
+    padding: 30px; /* Ruang di dalam footer */
+    text-align: center; /* Teks di tengah secara horizontal */
+}
+
+/* Tata letak utama konten di footer */
+.footer-content {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: space-between; /* Jarak sama antar elemen di dalam footer */
+    align-items: flex-start; /* Elemen disejajarkan ke bagian atas */
+    max-width: 1200px; /* Lebar maksimum footer */
+    margin: 0 auto; /* Menempatkan footer di tengah */
+    gap: 40px; /* Jarak antar elemen di dalam footer */
+}
+
+/* Gaya untuk logo di footer */
+.footer-logo {
+    text-align: left; /* Logo disejajarkan ke kiri */
+    flex: 1; /* Mengambil ruang sesuai proporsi */
+}
+
+.footer-logo img {
+    width: 100px; /* Ukuran lebar logo */
+    margin-bottom: 10px; /* Jarak antara logo dan teks berikutnya */
+}
+
+.footer-logo p {
+    margin: 5px 0; /* Margin vertikal untuk paragraf */
+    font-size: 14px; /* Ukuran font untuk teks di bawah logo */
+}
+
+/* Gaya untuk bagian kategori di footer */
+.footer-links {
+    display: flex;
+    flex-direction: column; /* Membuat elemen vertikal */
+    align-items: center; /* Pusatkan elemen secara horizontal */
+    text-align: center; /* Teks sejajar di tengah */
+    flex: 1; /* Mengambil ruang sesuai proporsi */
+}
+
+.footer-links h4 {
+    font-size: 18px; /* Ukuran font judul kategori */
+    margin-bottom: 10px; /* Jarak antara judul dan daftar kategori */
+}
+
+.footer-category {
+    width: inline-block; /* Memastikan lebar sesuai container */
+    text-align: center; /* Semua item teks di tengah */
+    padding: 0; /* Menghapus padding tambahan */
+    margin: 0; /* Menghapus margin tambahan */
+}
+
+.category-item {
+    position: relative; /* Untuk subkategori agar bisa diatur posisinya */
+    display: block; /* Setiap item dalam satu blok */
+    padding: 0; /* Menghapus padding tambahan */
+    margin: 0 auto; /* Memastikan elemen berada di tengah */
+    text-align: center; /* Teks sejajar di tengah */
+}
+
+.category-link {
+    display: inline-block; /* Link ditampilkan dalam bentuk blok */
+    padding: 10px; /* Ruang dalam untuk link */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+    color: white; /* Warna teks link */
+    font-size: 16px; /* Ukuran font link */
+    text-align: center; /* Teks di tengah dalam link */
+    cursor: pointer; /* Menampilkan ikon kursor */
+}
+
+.category-link:hover {
+    color: #007bff; /* Mengubah warna teks saat hover */
+}
+
+/* Gaya untuk subkategori (tersembunyi secara default) */
+.sub-category {
+    display: none; /* Tidak ditampilkan secara default */
+    position: absolute; /* Untuk menempatkan relatif ke kategori utama */
+    top: 0px; /* Posisi sejajar dengan kategori utama */
+    left: 50%; /* Ditempatkan di sebelah kanan kategori utama */
+    margin-left: 45px; /* Jarak dari kategori utama */
+    padding: 0; /* Ruang dalam subkategori */
+    list-style: none; /* Menghapus bullet pada daftar */
+    min-width: 200px; /* Lebar minimum untuk subkategori */
+    border-radius: 5px; /* Sudut subkategori melengkung */
+    text-align: left;
+}
+
+.footer-category ul li::before {
+    content: "> "; /* Menambahkan ikon ">" sebelum teks */
+    margin-right: 5px; /* Jarak antara ikon dan teks */
+    color: white; /* Warna ikon */
+}
+.sub-category li {
+    margin: 10px 0; /* Jarak antar item di subkategori */
+}
+
+.sub-category a {
+    color: white; /* Warna teks untuk link subkategori */
+    text-decoration: none; /* Menghapus garis bawah */
+    font-size: 14px; /* Ukuran font untuk link subkategori */
+}
+
+.sub-category a:hover {
+    text-decoration: underline; /* Efek garis bawah saat hover */
+}
+
+/* Menampilkan subkategori saat kategori utama di-hover */
+.category-item:hover .sub-category {
+    display: block; /* Menampilkan subkategori */
+}
+
+/* Gaya untuk bagian sosial media di footer */
+.footer-socials {
+    flex: 1; /* Mengambil ruang sesuai proporsi */
+    text-align: center; /* Teks di tengah secara horizontal */
+}
+
+.footer-socials h4 {
+    font-size: 16px; /* Ukuran font judul sosial media */
+    margin-bottom: 10px; /* Jarak antara judul dan ikon */
+    color: white; /* Warna teks judul */
+}
+
+.footer-socials a {
+    margin: 0 10px; /* Jarak horizontal antar ikon sosial media */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+}
+
+.footer-socials img {
+    width: 40px; /* Ukuran lebar ikon sosial media */
+    height: 40px; /* Ukuran tinggi ikon sosial media */
+    transition: transform 0.3s; /* Efek transisi saat hover */
+}
+
+.footer-socials img:hover {
+    transform: scale(1.1); /* Membesarkan ikon saat hover */
+}
+
+/* ======================================================================== */
+
+/* Modal Styles */
+.modal {
+    display: none; /* Awalnya tersembunyi */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+/* Modal Login Styling */
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center; 
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #002855;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #002855;
+    text-align: left;
+}
+
+.modal form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modal form input:focus {
+    border-color: #002855;
+    outline: none;
+}
+
+.modal form button {
+    padding: 12px 20px;
+    background-color: #002855;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal form button:hover {
+    background-color: #004080;
+}
+
+.modal form p {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.modal form p a {
+    color: #002855;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal form p a:hover {
+    text-decoration: underline;
+}
+
+.modal .logo-login {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* @media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+} */
+
+/* Styling untuk tombol daftar */
+.btn-daftar {
+    background-color: #ff5722; /* Sesuaikan warna */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-daftar:hover {
+    background-color: #e64a19; /* Warna saat hover */
+}
+
+/* Styling logo pada halaman registrasi */
+.logo-registrasi {
+    display: block;
+    margin: 0 auto; /* Agar berada di tengah */
+    width: 80px;    /* Sesuaikan ukuran logo */
+    height: auto;   /* Mempertahankan proporsi logo */
+    margin-bottom: 10px; /* Jarak antara logo dan tulisan Registrasi */
+}
+
+#registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#registration-form input {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#registration-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#registration-form button:hover {
+    background-color: #45a049;
+}
+
+/* RESPONSIVE - Mobile view */
+@media (max-width: 768px) {
+
+    /* Navigasi */
+    .nav-links {
+        display: none;
+        /* Awalnya tersembunyi */
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+
+    .footer-logo img {
+        width: 80px;
+        /* Ukuran lebih kecil untuk tablet */
+    }
+
+    /* Wisata list */
+    .wisata-list {
+        flex-wrap: nowrap; /* Mencegah wrapping */
+        overflow-x: auto; /* Mengizinkan scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling di iOS */
+        padding: 10px; /* Mengurangi padding */
+        gap: 10px; /* Mengurangi jarak antar kartu */
+    }
+
+    .wisata-list .card {
+        flex: 0 0 80%; /* Menjadikan kartu selebar 80% dari lebar kontainer */
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .wisata-list .card:hover {
+        transform: scale(1.02); /* Efek zoom */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .wisata-list .card img {
+        height: 150px; /* Mengurangi tinggi gambar */
+    }
+
+    .wisata-list .card-body {
+        padding: 10px; /* Mengurangi padding dalam kartu */
+    }
+
+    .wisata-list .card-body h3 {
+        font-size: 1rem; /* Mengurangi ukuran font judul */
+    }
+
+    .wisata-list .card-body p {
+        font-size: 0.9rem; /* Mengurangi ukuran font deskripsi */
+        line-clamp: 2; /* Batasi deskripsi menjadi 2 baris */
+    }
+
+    .rating {
+        font-size: 1rem; /* Mengurangi ukuran ikon bintang */
+    }
+
+    .wisata-list .btn {
+        font-size: 0.9rem; /* Ukuran font tombol */
+        padding: 8px 16px; /* Ukuran padding tombol */
+    }
+
+    /* Mengatur ulang tata letak footer secara keseluruhan */
+    .footer-content {
+        flex-direction: column;
+        /* Elemen diatur secara vertikal */
+        align-items: center;
+        /* Semua elemen disejajarkan ke tengah */
+        gap: 20px;
+        /* Mengurangi jarak antar elemen */
+    }
+
+    /* Logo footer diatur di tengah */
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+        margin: 0 auto;
+        /* Logo ditempatkan di tengah */
+    }
+
+    /* Bagian kategori diatur ulang */
+    .footer-links {
+        align-items: flex-start;
+        text-align: left;
+        /* Teks disejajarkan ke kiri */
+    }
+
+    /* Link kategori dibuat lebih rapat */
+    .footer-category {
+        margin: 0 auto;
+        /* Teks tetap berada di tengah */
+    }
+
+    .category-item {
+        text-align: left;
+        /* Item kategori disejajarkan ke kiri */
+    }
+
+    .category-link {
+        font-size: 14px;
+        /* Ukuran font dikurangi */
+        padding: 8px;
+        /* Mengurangi ruang dalam */
+    }
+
+    /* Subkategori diatur ulang */
+    .sub-category {
+        position: absolute;
+        left: 100%;
+        right: auto; /* Subkategori akan terbuka ke kiri penuh dari kategori utama */
+        margin-left: 0; /* Menghapus jarak tambahan ke kiri */
+        margin-right: -10px; /* Memberi jarak sedikit dari kategori utama */
+        text-align: left; /* Teks tetap sejajar ke kiri */
+    }
+
+    /* Sosial media diatur di tengah */
+    .footer-socials {
+        text-align: center;
+    }
+
+    .footer-socials img {
+        width: 30px;
+        height: 30px;
+        /* Ukuran ikon dikurangi */
+    }
+}

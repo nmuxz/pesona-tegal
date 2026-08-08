@@ -3,7 +3,7 @@
         <div class="modal-content">
             <span class="close-btn" id="close-register">×</span>
             <div class="form-header">
-                <img src="asset/Logo.png" alt="Pesona Tegal Logo" class="logo-registrasi">
+                <img src="assets/images/Logo.png" alt="Pesona Tegal Logo" class="logo-registrasi">
                 <h2>Registrasi</h2>
                 <p>Silahkan buat akun dengan mengisi data diri anda</p>
             </div>

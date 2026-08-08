@@ -78,7 +78,7 @@ CREATE TABLE rating (
 
 ---<  DAta Percobaan Awal jangan upload  >---
 -- Admin
-INSERT INTO admin (username, password) VALUES ('admin', 'password123');
+INSERT INTO admin (username, password) VALUES ('admin', '$2y$10$1r./YBifBWu.mLYTCB9iBOHjAU3i0Tte7Cw9GVBgAozDUlgnoThSq');
 
 SELECT *FROM kuliner;
 SELECT *FROM wisata;

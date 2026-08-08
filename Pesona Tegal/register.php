@@ -17,22 +17,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     // Hash password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    // Cek apakah email sudah terdaftar
-    $checkEmailQuery = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($checkEmailQuery);
+    // Cek apakah email sudah terdaftar menggunakan prepared statement
+    $checkEmailQuery = "SELECT id FROM users WHERE email = ?";
+    $stmt = $conn->prepare($checkEmailQuery);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
     if ($result->num_rows > 0) {
         die("Email sudah terdaftar.");
     }
-    // Masukkan data pengguna ke database
-    $query = "INSERT INTO users (name, origin, email, password) VALUES ('$name', '$origin', '$email', '$hashedPassword')";
+    $stmt->close();
+
+    // Masukkan data pengguna ke database menggunakan prepared statement
+    $query = "INSERT INTO users (name, origin, email, password) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ssss", $name, $origin, $email, $hashedPassword);
     
-    if ($conn->query($query) === TRUE) {
+    if ($stmt->execute()) {
         // echo "Pendaftaran berhasil!";
         $_SESSION['error_message'] = "Pendaftaran Berhasil";
         header("Location: beranda.php");
     } else {
-        echo "Error: " . $query . "<br>" . $conn->error;
+        echo "Error: " . $stmt->error;
     }
+    $stmt->close();
     // Tutup koneksi
     $conn->close();
 }

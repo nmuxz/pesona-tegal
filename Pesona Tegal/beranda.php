@@ -49,14 +49,14 @@ $result_oleholeh = $conn->query($query_oleholeh);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesona Tegal</title>
-    <link rel="stylesheet" href="beranda.css">
+    <link rel="stylesheet" href="assets/css/beranda.css">
 </head>
 
 <body data-logged-in="<?= $isLoggedIn ? 'true' : 'false' ?>">
     <!-- Header -->
     <header class="main-header">
         <nav class="navbar">
-            <img id="profile-logo" src="asset/Logo.png" alt="Logo Pesona Tegal" class="logo">
+            <img id="profile-logo" src="assets/images/Logo.png" alt="Logo Pesona Tegal" class="logo">
             <ul class="nav-links">
                 <li><a href="beranda.php">Beranda</a></li>
                 <li class="dropdown">
@@ -98,7 +98,7 @@ $result_oleholeh = $conn->query($query_oleholeh);
             </div>
             <div class="menu">
                 <ul class="categories">
-                    <img src="asset/Logo.png" alt="Logo Pesona Tegal" class="logo1">
+                    <img src="assets/images/Logo.png" alt="Logo Pesona Tegal" class="logo1">
                     <a>Pesona Tegal</a>
                     <li class="category">
                         <a href="beranda.php">Beranda</a>
@@ -265,7 +265,7 @@ $result_oleholeh = $conn->query($query_oleholeh);
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="asset/Logo.png" alt="Logo Pesona Tegal" />
+                <img src="assets/images/Logo.png" alt="Logo Pesona Tegal" />
                 <p>Pesona Tegal</p>
                 <p>Jl. Prof. Dr. Suharso No.45, Mangunjaya, Tegal</p>
             </div>
@@ -302,10 +302,10 @@ $result_oleholeh = $conn->query($query_oleholeh);
             <div class="footer-socials">
                 <h4>Ikuti Kami</h4>
                 <a href="https://instagram.com/youraccount" target="_blank">
-                    <img src="asset/Instagram.png" alt="Instagram Pesona Tegal" />
+                    <img src="assets/images/Instagram.png" alt="Instagram Pesona Tegal" />
                 </a>
                 <a href="https://tiktok.com/@youraccount" target="_blank">
-                    <img src="asset/TikTok.png" alt="TikTok Pesona Tegal" />
+                    <img src="assets/images/TikTok.png" alt="TikTok Pesona Tegal" />
                 </a>
             </div>
         </div>
@@ -316,7 +316,7 @@ $result_oleholeh = $conn->query($query_oleholeh);
     <!-- Modal Registrasi -->
     <?php include 'registrasi-modal.php'; ?>
 
-    <script src="javascript.js" defer></script>
+    <script src="assets/js/javascript.js" defer></script>
 
 </body>
 

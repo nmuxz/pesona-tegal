@@ -3,7 +3,7 @@
     <div class="modal-content">
         <span class="close-btn" id="close-login">×</span>
         <div class="form-header">
-            <img src="asset/Logo.png" alt="Pesona Tegal Logo" class="logo-registrasi">
+            <img src="assets/images/Logo.png" alt="Pesona Tegal Logo" class="logo-registrasi">
             <h2>Selamat Datang!</h2>
             <p>Silahkan login terlebih dahulu</p>
         </div>

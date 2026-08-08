@@ -1,0 +1,129 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and overall background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container for the content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #444;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Table row hover effect */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Thumbnail image styling */
+.thumbnail {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Rating star styling */
+td:nth-child(5) {
+    font-size: 20px;
+    color: #FFD700;
+}
+
+/* Styling for no data message */
+p {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive styling for tables */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    td, th {
+        padding: 10px;
+    }
+}
+
+/* Styling for the star icons */
+.star-rating {
+    display: inline-block;
+}
+
+.star-rating span {
+    font-size: 20px;
+    color: #FFD700;
+}
+
+.star-rating span.empty {
+    color: #ddd;
+}
